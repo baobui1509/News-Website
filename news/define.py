@@ -5,6 +5,7 @@ APP_VALUE_STATUS_DEFAULT = 'draft'
 TABLE_CATEGORY_SHOW = "Category"
 TABLE_ARTICLE_SHOW = "Article"
 TABLE_FEED_SHOW = "Feed"
+TABLE_CONTACT_SHOW = "Contact"
 APP_VALUE_IMAGE_DEFAULT = '/media/news/images/feed/no-image.png'
 APP_VALUE_STATUS_CHOICES = (
         ('private', 'Private'),
