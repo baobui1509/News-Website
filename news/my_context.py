@@ -48,7 +48,7 @@ def items_price_sidebar_coin(request):
     try:
         response = requests.get(url)
         response.raise_for_status()  # Kiểm tra lỗi HTTP
-        print("Response text:", response.text)  # In nội dung phản hồi để kiểm tra
+        # print("Response text:", response.text)  # In nội dung phản hồi để kiểm tra
 
         if response.text.strip():  # Kiểm tra nếu phản hồi không trống
             items_price_sidebar_coin = response.json()[:SETTING_PRICE_COIN_TOTAL_ITEMS]
@@ -79,7 +79,7 @@ def items_price_sidebar_gold(request):
     try:
         response = requests.get(url)
         response.raise_for_status()  # Kiểm tra lỗi HTTP
-        print("Response text:", response.text)  # In nội dung phản hồi để kiểm tra
+        # print("Response text:", response.text)  # In nội dung phản hồi để kiểm tra
 
         if response.text.strip():  # Kiểm tra nếu phản hồi không trống
             items_price_sidebar_gold = response.json()[:SETTING_PRICE_GOLD_TOTAL_ITEMS]

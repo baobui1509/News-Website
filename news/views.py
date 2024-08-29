@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse
 from .models import Category, Article, Feed
 from django.utils import timezone
@@ -10,6 +10,7 @@ import requests
 from requests_toolbelt.adapters.ssl import SSLAdapter
 from bs4 import BeautifulSoup
 from .define import *
+from .forms import ContactForm
 
 def index(request):
     items_article_special = Article.objects.filter(special=True, status=APP_VALUE_STATUS_ACTIVE, publish_date__lte=timezone.now()).order_by('-publish_date')[:SETTING_ARTICLE_TOTAL_ITEMS_SPECIAL]
@@ -102,8 +103,36 @@ def about(request):
         })
     
 def contact(request):
+    form = ContactForm()
+    return render(request, 'contact.html', {
+        'form': form,
+        'success_message': request.session.pop('success_message', None),
+        'error_message': request.session.pop('error_message', None)
+    })
+
+def contact_process(request):
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            form.save()  # Lưu dữ liệu vào database
+            # Set success message in session
+            request.session['success_message'] = 'Gửi lời nhắn thành công!'
+            request.session['error_message'] = None
+        else:
+            # Set error message in session
+            request.session['success_message'] = None
+            request.session['error_message'] = form.errors
+        return redirect('contact')  # Chuyển hướng sau khi gửi form thành công
+    else:
+        # Reset messages if not POST
+        request.session['success_message'] = None
+        request.session['error_message'] = None
+        form = ContactForm()
+        
+    return render(request, 'contact.html', {
+        'form': form,
+        'success_message': request.session.pop('success_message', None),
+        'error_message': request.session.pop('error_message', None)
+    })
     
-    return render(request, APP_PATH_PAGES + 'contact.html', {
-            'title_page': "Liên hệ"
-           
-        })
+    

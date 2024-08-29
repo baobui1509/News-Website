@@ -12,6 +12,7 @@ urlpatterns = [
     path('search.html', views.search, name="search"),
     path('about.html', views.about, name="about"),
     path('contact.html', views.contact, name="contact"),
+    path('contact-process', views.contact_process, name='contact_process'),
     path('tinymce/', include('tinymce.urls')),
     path('<slug:category_slug>.html', views.category, name="category")
     

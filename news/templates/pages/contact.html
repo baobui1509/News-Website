@@ -15,13 +15,34 @@
     <!-- Tab content -->
     <div class="row">
         <div class="col-lg-8">
-            <div class="alert alert-danger" role="alert"><i class="fas fa-exclamation-circle"></i> Lỗi: 
+            {% comment %} <div class="alert alert-danger" role="alert"><i class="fas fa-exclamation-circle"></i> Lỗi: 
                 <ul>
                     <li><b class="alert-danger">name:</b> Không hợp lệ</li>
                     <li><b class="alert-danger">email:</b> Không hợp lệ</li>
                     <li><b class="alert-danger">message:</b> Không hợp lệ</li>
                 </ul>
-            </div>
+            </div> {% endcomment %}
+            
+            <!-- Success Message -->
+            {% if success_message %}
+                <div class="alert alert-success" role="alert">
+                    <i class="fas fa-check-circle"></i> {{ success_message }}
+                </div>
+            {% endif %}
+
+            <!-- Error Message -->
+            {% if error_message %}
+                <div class="alert alert-danger" role="alert">
+                    <i class="fas fa-exclamation-circle"></i> Lỗi:
+                    <ul>
+                        {% for field, errors in error_message.items %}
+                            {% for error in errors %}
+                                <li><b>{{ field }}:</b> {{ error }}</li>
+                            {% endfor %}
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% endif %}
             <form class="form-contact contact_form" method="post" action="/contact-process" novalidate="novalidate">
                 {% csrf_token %}
                 <div class="row">

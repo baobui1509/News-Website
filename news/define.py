@@ -1,7 +1,8 @@
 APP_VALUE_STATUS_ACTIVE = "public"
 APP_PATH_PAGES = "pages/"
 APP_VALUE_LAYOUT_DEFAULT = 'list'
-APP_VALUE_STATUS_DEFAULT = 'draft'
+APP_VALUE_STATUS_CONTACT_DEFAULT = False
+APP_VALUE_STATUS_DEFAULT = 'private'
 TABLE_CATEGORY_SHOW = "Category"
 TABLE_ARTICLE_SHOW = "Article"
 TABLE_FEED_SHOW = "Feed"
@@ -10,6 +11,10 @@ APP_VALUE_IMAGE_DEFAULT = '/media/news/images/feed/no-image.png'
 APP_VALUE_STATUS_CHOICES = (
         ('private', 'Private'),
         ('public', 'Public')
+    )
+APP_VALUE_STATUS_CONTACT_CHOICES = (
+        (True, 'Contacted'),
+        (False, 'Not contacted yet')
     )
 APP_VALUE_LAYOUT_CHOICES = (
         ('list', 'List'),
