@@ -5,6 +5,8 @@ from news.custom_field import CustomBooleanField
 from news.define import *
 from django.urls import reverse
 from .category import Category
+from .author import Author
+from .tag import Tag
 
 
 class Article (models.Model):
@@ -17,7 +19,8 @@ class Article (models.Model):
     content = HTMLField()
     image = models.ImageField(upload_to=get_file_path)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
-    
+    author = models.ForeignKey(Author, on_delete=models.CASCADE, null=True)
+    tag = models.ManyToManyField(Tag)
     class Meta:
         verbose_name_plural = TABLE_ARTICLE_SHOW
         

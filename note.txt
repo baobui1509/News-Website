@@ -1,0 +1,19 @@
+Model Author
+    - Introduction (phone, fb,...), name, slug, status, image
+
+    - domain.com/tac-gia/nguyen-van-linh-2
+
+    - layout tuong tu trang category
+    - bo sung thong tin tac gia o cuoi trang chi tiet bai viet, tuong tu trang nay: https://themegenix.net/html/zaira/blog-details.html
+
+
+
+Model Tag
+    - name, slug, 
+    - quan he n-n voi Article -> Django Many to Many
+    - Phan nhap tag trong khu vuc bai viet -> tags input, vi du: https://yaireo.github.io/tagify/
+    - Tags input -> goi y nhung tag da co
+    - Viet Nam -> VIET NAM
+
+
+    - domain.com/chu-de/viet-nam-5

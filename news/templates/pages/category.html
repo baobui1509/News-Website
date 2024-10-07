@@ -33,7 +33,7 @@
                                             <div class="whates-caption whates-caption2"
                                                 style="width: 75%; margin-left: 30px;">
                                                 <h4><a href="{{item.get_absolute_url}}">{{item.name}}</a></h4>
-                                                <span>by Admin - {{item.publish_date|date:"M d, Y"}}</span>
+                                                <span>{{item.author.name}} - {{item.publish_date|date:"M d, Y"}}</span>
                                                 <p>
                                                 <p>{{item.content|safe|truncatechars:200}}</p>
                                             </div>
@@ -51,7 +51,7 @@
                                             <div class="whates-caption">
                                                 <h4><a
                                                         href="{{item.get_absolute_url}}">{{item.name}}</a></h4>
-                                                <span>by Admin - {{item.publish_date|date:"M d, Y"}}</span>
+                                                <span>{{item.author.name}} - {{item.publish_date|date:"M d, Y"}}</span>
                                                 <p>
                                                 <p>{{item.content|safe|truncatechars:200}}</p>
                                             </div>

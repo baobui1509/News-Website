@@ -12,7 +12,11 @@ urlpatterns = [
     path('search.html', views.search, name="search"),
     path('about.html', views.about, name="about"),
     path('contact.html', views.contact, name="contact"),
-    path('contact-process', views.contact_process, name='contact_process'),
+    path('tac-gia/<slug:slug>-<int:id>/', views.author, name='author'),
+    path('post_contact', views.post_contact, name="post_contact"),
+    path('api/get-tags/', views.get_tags, name='get_tags'),
+    path('api/add-tag/', views.add_tag, name='add-tag'),
+    path('get_articles_by_category', views.get_articles_by_category, name="get_articles_by_category"),
     path('tinymce/', include('tinymce.urls')),
     path('<slug:category_slug>.html', views.category, name="category")
     

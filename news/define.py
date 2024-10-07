@@ -6,6 +6,8 @@ APP_VALUE_STATUS_DEFAULT = 'private'
 TABLE_CATEGORY_SHOW = "Category"
 TABLE_ARTICLE_SHOW = "Article"
 TABLE_FEED_SHOW = "Feed"
+TABLE_AUTHOR_SHOW = "Author"
+TABLE_TAG_SHOW = "Tag"
 TABLE_CONTACT_SHOW = "Contact"
 APP_VALUE_IMAGE_DEFAULT = '/media/news/images/feed/no-image.png'
 APP_VALUE_STATUS_CHOICES = (
@@ -35,6 +37,20 @@ SETTING_API_LINK_PRICE_COIN = 'https://apiforlearning.zendvn.com/api/get-coin'
 SETTING_API_LINK_PRICE_GOLD = 'https://apiforlearning.zendvn.com/api/get-gold'
 
 
-ADMIN_SRC_JS = ('admin/js/general.js', 'admin/js/jquery-3.6.0.min.js', 'admin/js/slugify.min.js')
-ADMIN_SRC_CSS = {'all': ('admin/css/custom.css',)}
+ADMIN_SRC_JS = (
+    'admin/js/jquery-3.6.0.min.js',  
+    'admin/js/general.js',             
+    'admin/js/slugify.min.js',         
+    'https://cdn.jsdelivr.net/npm/@yaireo/tagify/dist/tagify.min.js',  
+    'admin/js/tagify_init.js',     
+)
+
+
+ADMIN_SRC_CSS = {
+    'all': (
+        'admin/css/custom.css',
+        'https://cdn.jsdelivr.net/npm/@yaireo/tagify/dist/tagify.css',  
+    ),
+}
+
 ADMIN_HEADER_NAME = "BAO BUI Administration"
