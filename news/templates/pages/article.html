@@ -30,7 +30,29 @@
             <li><a href="#"><i class="fab fa-behance"></i></a></li>
         </ul>
     </div>
-
+    <div class="tags d-flex flex-wrap my-4">
+        <h5 class="me-3">Chủ đề:</h5>
+        {% for tag in item_article.tag.all%}
+            <a href = "{% url 'tag_detail' slug=tag.slug %}" class="badge bg-primary text-decoration-none me-2 mb-2">{{tag.name}}</a>
+        {% endfor %}
+        <!-- Thêm các tag khác tại đây -->
+    </div>
+    <div class="blog-author">
+        <div class="media align-items-center">
+            {% if author %}
+                <img src="{{author.image.url}}" alt="">
+                <div class="media-body">
+                    <a href="{% url 'author' slug=author.slug id=author.id %}">  
+                        <h4>{{ author.name }}</h4>
+                    </a>
+                    <p>{{ author.email }}</p> 
+                </div>
+            {% else %}
+                <p>Thông tin tác giả không có sẵn.</p>
+            {% endif %}
+        </div>
+    </div>
+    
     <div class="related-posts">
         <h3 class="related-posts-title">Bài Viết Liên Quan</h3>
         <div class="d-flex flex-wrap">
@@ -46,26 +68,12 @@
                     </div>
                 </div>
             {% endfor %}
-            
-
         </div>
     </div>
 
 </div>
-<div class="blog-author">
-    <div class="media align-items-center">
-        {% if author %}
-            <img src="{{author.image.url}}" alt="">
-            <div class="media-body">
-                <a href="{% url 'author' slug=author.slug id=author.id %}">  
-                    <h4>{{ author.name }}</h4>
-                </a>
-                <p>{{ author.email }}</p> 
-            </div>
-        {% else %}
-            <p>Thông tin tác giả không có sẵn.</p>
-        {% endif %}
-    </div>
-</div>
+
+
+
 
 {% endblock%}

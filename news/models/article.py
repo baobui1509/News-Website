@@ -20,7 +20,7 @@ class Article (models.Model):
     image = models.ImageField(upload_to=get_file_path)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     author = models.ForeignKey(Author, on_delete=models.CASCADE, null=True)
-    tag = models.ManyToManyField(Tag)
+    tag = models.ManyToManyField(Tag, blank=True)
     class Meta:
         verbose_name_plural = TABLE_ARTICLE_SHOW
         

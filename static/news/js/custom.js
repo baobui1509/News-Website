@@ -67,7 +67,7 @@ if (ELEMENT_SUBMIT_FORM) {
 ELEMENT_LOAD_MORE.forEach(loadMore => {
     loadMore.addEventListener('click', () => {
         var offset = parseInt(loadMore.dataset.offset);
-        var layout = parseInt(loadMore.dataset.layout);
+        var layout = loadMore.dataset.layout;
         const category_id = parseInt(loadMore.dataset.category);
         axios.get('/get_articles_by_category', {
             params: {

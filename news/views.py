@@ -102,7 +102,7 @@ def feed(request, feed_slug):
 def search(request):
     keyword = request.GET.get('keyword')
     items_article = Article.objects.filter(name__contains=keyword, status=APP_VALUE_STATUS_ACTIVE, publish_date__lte=timezone.now()).order_by('-publish_date')
-    paginator = Paginator(items_article, SETTING_ARTICLE_TOTAL_ITEMS_PER_PAGE)
+    paginator = Paginator(items_article, 1)
     
     page = request.GET.get('page')
     
@@ -244,4 +244,17 @@ def add_tag(request):
             tag, created = Tag.objects.get_or_create(name=tag_name)  # Tạo tag nếu chưa tồn tại
             return JsonResponse({'success': created, 'tag_id': tag.id, 'tag_name': tag.name})
     return JsonResponse({'error': 'Invalid request'}, status=400)
+
+def tag_detail(request, slug):
+    tagg = get_object_or_404(Tag, slug=slug)
+    items_article = Article.objects.filter(tag=tagg)  
     
+    paginator = Paginator(items_article, 2)
+    page = request.GET.get('page')
+    items_article = paginator.get_page(page)
+    return render(request, 'tag_detail.html', {
+        'tag': tagg, 
+        'items_article': items_article,
+        'paginator': paginator
+        }
+    ) 

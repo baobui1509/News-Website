@@ -20,8 +20,10 @@
                                             <img src="{{item.image.url}}"
                                                 alt="" style="height: 520px; object-fit: cover;">
                                             <div class="trend-top-cap">
-                                                <span class="bgb" data-animation="fadeInUp" data-delay=".2s"
-                                                    data-duration="1000ms">{{item.category}}</span>
+                                                <a href="{{item.category.get_absolute_url}}">
+                                                    <span class="bgb" data-animation="fadeInUp" data-delay=".2s"data-duration="1000ms">{{item.category}}
+                                                    </span>
+                                                </a>
                                                 <h2><a href="{{item.get_absolute_url}}"
                                                         data-animation="fadeInUp" data-delay=".4s"
                                                         data-duration="1000ms">{{item.name}}</a></h2>
@@ -46,7 +48,7 @@
                                             <img src="{{item.image.url}}"
                                                 alt="" style="height: 245px;">
                                             <div class="trend-top-cap trend-top-cap2">
-                                                <span class="bgb">{{item.category}}</span>
+                                                <a href="{{item.category.get_absolute_url}}"><span class="bgb">{{item.category}}</span></a>
                                                 <h2><a href="{{item.get_absolute_url}}">{{item.name}}</a></h2>
                                                 <p>{{item.author.name}} - {{item.publish_date | date:"M d, y"}}</p>
                                             </div>

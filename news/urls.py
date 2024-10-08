@@ -16,6 +16,7 @@ urlpatterns = [
     path('post_contact', views.post_contact, name="post_contact"),
     path('api/get-tags/', views.get_tags, name='get_tags'),
     path('api/add-tag/', views.add_tag, name='add-tag'),
+    path('chu-de/<slug:slug>', views.tag_detail, name='tag_detail'),
     path('get_articles_by_category', views.get_articles_by_category, name="get_articles_by_category"),
     path('tinymce/', include('tinymce.urls')),
     path('<slug:category_slug>.html', views.category, name="category")

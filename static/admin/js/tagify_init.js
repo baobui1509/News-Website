@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", function(){
                     },
                     // originalInputValueFormat: valuesArr => valuesArr.map(item => item.value).join(', ')
                 });
+
                 tagify.on('add', function(e) {
                     const addedTag = e.detail.data.value;
                     console.log(e.detail)

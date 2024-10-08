@@ -2,6 +2,8 @@ from django.contrib import admin
 from .define import *
 from django import forms
 from .models import Category, Article, Feed, Contact, Author, Tag
+from django.db.models import QuerySet
+
 
 class CategoryAdmin(admin.ModelAdmin):
     list_display = ('name', 'status', 'is_homepage', 'layout', 'ordering')
@@ -15,21 +17,37 @@ class CategoryAdmin(admin.ModelAdmin):
 class ArticleAdminForm(forms.ModelForm):
     class Meta:
         model = Article
-        fields = '__all__'  
+        fields = '__all__'  # Thêm các trường cần thiết
 
-    # Tùy chỉnh widget của trường 'tag' thành TextInput để dùng với Tagify
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.fields['tag'].widget = forms.TextInput(attrs={'class': 'tagify-input'})
+    # Override clean_tag để cho phép tạo tag mới
+    def clean_tag(self):
+        tags = self.cleaned_data.get('tag', '')
+        print('tags', tags)
+        tag_names = [tag.strip() for tag in tags.split(',') if tag.strip()]
+        
+        tag_objects = []
+        for tag_name in tag_names:
+            tag_obj, created = Tag.objects.get_or_create(name=tag_name)
+            tag_objects.append(tag_obj)
+
+        return tag_objects
+
+
+
 class ArticleAdmin(admin.ModelAdmin):
-    list_display = ('name', 'category', 'status', 'ordering', 'special', 'author')
+    list_display = ('name', 'category', 'status', 'ordering', 'special', 'author', 'get_tags')
     autocomplete_fields = ['tag']
     list_filter = ['status', 'special', 'category', 'author']
     search_fields = ['name']
-    form = ArticleAdminForm
+    # form = ArticleAdminForm
     class Media:
         js = ADMIN_SRC_JS
         css = ADMIN_SRC_CSS
+        
+    @admin.display(description='Tags') 
+    def get_tags(self, obj):
+        tags = [ tag.name for tag in obj.tag.all()]
+        return ', '.join(tags)
         
 
         
