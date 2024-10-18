@@ -169,7 +169,7 @@ def about(request):
 #             # Đặt thông báo lỗi vào session
 #             request.session['error_message'] = form.errors
             
-    
+        
 #     success_message = request.session.pop('success_message', None)  # Lấy thông báo thành công từ session
 #     error_message = request.session.pop('error_message', None)  # Lấy thông báo lỗi từ session
     

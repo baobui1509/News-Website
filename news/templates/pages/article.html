@@ -3,77 +3,507 @@
 {% load static %}
 
 {% block content %}
-<div class="single-post">
-    <div class="feature-img">
-        <img class="img-fluid"
-            src="{{item_article.image.url}}" alt=""
-            style="min-width: 100%;">
-    </div>
-    <div class="blog_details">
-        <h2>{{item_article.name}}</h2>
-        <ul class="blog-info-link mt-3 mb-4">
-            <li><a href="{% url 'author' slug=author.slug id=author.id %}"><i class="fa fa-user"></i> {{ author.name }}</a></li>
-            <li><a href="#"><i class="fa fa-calendar"></i> {{item_article.publish_date|date:"M d, Y"}}</a></li>
-        </ul>
-        {{item_article.content | safe}}
+<div class="page-body">
+                <div class="container-xl">
+                    <div wire:snapshot="{&quot;data&quot;:{&quot;pageTitle&quot;:&quot;Slider&quot;,&quot;deleteId&quot;:null,&quot;filterParams&quot;:[{&quot;status&quot;:&quot;all&quot;},{&quot;s&quot;:&quot;arr&quot;}],&quot;list&quot;:[[[{&quot;id&quot;:38,&quot;name&quot;:&quot;ahihi&quot;,&quot;description&quot;:&quot;&quot;,&quot;url&quot;:&quot;&quot;,&quot;status&quot;:&quot;published&quot;,&quot;created_at&quot;:&quot;2024-10-10T14:34:39.000000Z&quot;,&quot;updated_at&quot;:&quot;2024-10-10T14:34:39.000000Z&quot;},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;id&quot;:22,&quot;name&quot;:&quot;Prof. Albertha Hirthe haha&quot;,&quot;description&quot;:&quot;Aut nihil eum natus quia deserunt quia quidem.&quot;,&quot;url&quot;:&quot;http:\/\/www.white.com\/&quot;,&quot;status&quot;:&quot;published&quot;,&quot;created_at&quot;:&quot;2024-10-03T12:30:18.000000Z&quot;,&quot;updated_at&quot;:&quot;2024-10-09T14:04:37.000000Z&quot;},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;id&quot;:23,&quot;name&quot;:&quot;Grayson Marks test th\u1ee9 edit t\u00ean&quot;,&quot;description&quot;:&quot;Saepe voluptatem quasi aliquam modi qui illo.&quot;,&quot;url&quot;:&quot;http:\/\/jacobi.com\/nostrum-iste-ut-sint-rerum-dolorum-iste-et&quot;,&quot;status&quot;:&quot;pending&quot;,&quot;created_at&quot;:&quot;2024-10-03T12:30:18.000000Z&quot;,&quot;updated_at&quot;:&quot;2024-10-09T14:04:18.000000Z&quot;},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;id&quot;:24,&quot;name&quot;:&quot;Sebastian Kling PhD&quot;,&quot;description&quot;:&quot;Ut tempora nisi nihil iusto.&quot;,&quot;url&quot;:&quot;https:\/\/www.stroman.com\/iste-dolorem-dicta-occaecati-et-vero-facilis&quot;,&quot;status&quot;:&quot;published&quot;,&quot;created_at&quot;:&quot;2024-10-03T12:30:18.000000Z&quot;,&quot;updated_at&quot;:&quot;2024-10-09T14:21:30.000000Z&quot;},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;id&quot;:25,&quot;name&quot;:&quot;Royal Predovic IV&quot;,&quot;description&quot;:&quot;Quia ipsum facere omnis sed veniam rerum consequatur.&quot;,&quot;url&quot;:&quot;http:\/\/flatley.com\/corrupti-quis-asperiores-ipsa-voluptatem-iusto-veniam&quot;,&quot;status&quot;:&quot;published&quot;,&quot;created_at&quot;:&quot;2024-10-03T12:30:18.000000Z&quot;,&quot;updated_at&quot;:&quot;2024-10-03T12:30:18.000000Z&quot;},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;id&quot;:26,&quot;name&quot;:&quot;Kennedi Frami&quot;,&quot;description&quot;:&quot;Consequatur harum repellat rerum reiciendis ad eos quibusdam.&quot;,&quot;url&quot;:&quot;http:\/\/shields.biz\/&quot;,&quot;status&quot;:&quot;published&quot;,&quot;created_at&quot;:&quot;2024-10-03T12:30:18.000000Z&quot;,&quot;updated_at&quot;:&quot;2024-10-03T12:30:18.000000Z&quot;},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;id&quot;:27,&quot;name&quot;:&quot;Alivia Keebler&quot;,&quot;description&quot;:&quot;Et nemo minus ex assumenda.&quot;,&quot;url&quot;:&quot;http:\/\/www.altenwerth.net\/ab-id-corporis-quis-blanditiis.html&quot;,&quot;status&quot;:&quot;pending&quot;,&quot;created_at&quot;:&quot;2024-10-03T12:30:18.000000Z&quot;,&quot;updated_at&quot;:&quot;2024-10-03T12:30:18.000000Z&quot;},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;id&quot;:28,&quot;name&quot;:&quot;Korey Rutherford&quot;,&quot;description&quot;:&quot;Deserunt sed reprehenderit consequuntur laudantium quos mollitia.&quot;,&quot;url&quot;:&quot;https:\/\/bahringer.biz\/voluptatem-deleniti-dolorem-magnam-qui-iure-modi-velit-labore.html&quot;,&quot;status&quot;:&quot;draft&quot;,&quot;created_at&quot;:&quot;2024-10-03T12:30:18.000000Z&quot;,&quot;updated_at&quot;:&quot;2024-10-03T12:30:18.000000Z&quot;},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;id&quot;:29,&quot;name&quot;:&quot;Dr. Isaiah Schiller I&quot;,&quot;description&quot;:&quot;Exercitationem qui et debitis a labore praesentium non.&quot;,&quot;url&quot;:&quot;http:\/\/gerhold.info\/&quot;,&quot;status&quot;:&quot;published&quot;,&quot;created_at&quot;:&quot;2024-10-03T12:30:18.000000Z&quot;,&quot;updated_at&quot;:&quot;2024-10-03T12:30:18.000000Z&quot;},{&quot;s&quot;:&quot;arr&quot;}],[{&quot;id&quot;:30,&quot;name&quot;:&quot;Clovis Connelly&quot;,&quot;description&quot;:&quot;Magni non fugiat omnis aliquam natus.&quot;,&quot;url&quot;:&quot;http:\/\/steuber.com\/nesciunt-placeat-itaque-quasi-aliquid-non&quot;,&quot;status&quot;:&quot;published&quot;,&quot;created_at&quot;:&quot;2024-10-03T12:30:18.000000Z&quot;,&quot;updated_at&quot;:&quot;2024-10-03T12:30:18.000000Z&quot;},{&quot;s&quot;:&quot;arr&quot;}]],{&quot;s&quot;:&quot;arr&quot;}],&quot;selectedItems&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;selectAll&quot;:false,&quot;bulkDelete&quot;:false,&quot;paginators&quot;:[{&quot;page&quot;:1},{&quot;s&quot;:&quot;arr&quot;}]},&quot;memo&quot;:{&quot;id&quot;:&quot;dqEh4XBQ9Fxq2ICfATvf&quot;,&quot;name&quot;:&quot;admin.slider&quot;,&quot;path&quot;:&quot;admin-ne\/sliders&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;children&quot;:[],&quot;scripts&quot;:[],&quot;assets&quot;:[],&quot;errors&quot;:[],&quot;locale&quot;:&quot;en&quot;},&quot;checksum&quot;:&quot;1357ca9ea9db41860700fcbf455a9b56ca1ec458dda4e81b6dd9df918fee0be4&quot;}" wire:effects="{&quot;url&quot;:{&quot;paginators.page&quot;:{&quot;as&quot;:&quot;page&quot;,&quot;use&quot;:&quot;push&quot;,&quot;alwaysShow&quot;:false,&quot;except&quot;:null}}}" wire:id="dqEh4XBQ9Fxq2ICfATvf">
+    <div class="page-header d-print-none mt-0 mb-3">
+    <div class="row g-2 align-items-center">
+        <div class="col">
+            <h2 class="page-title">
+                Slider
+            </h2>
+        </div>
+        <!-- Page title actions -->
+        <div class="col-auto ms-auto d-print-none">
+            <div class="btn-list">
+                <a href="/admin-ne/sliders/create" class="btn btn-primary" wire:navigate="">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-plus">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <path d="M12 5l0 14"></path>
+                <path d="M5 12l14 0"></path>
+            </svg>
+            Create
+        </a>
+            </div>
+        </div>
     </div>
 </div>
-<div class="navigation-top">
-    <div class="d-sm-flex justify-content-between text-center">
-        <div class="col-sm-4 text-center my-2 my-sm-0">
-            <!-- <p class="comment-count"><span class="align-middle"><i class="fa fa-comment"></i></span> 06 Comments</p> -->
-        </div>
-        <ul class="social-icons">
-            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-            <li><a href="#"><i class="fab fa-dribbble"></i></a></li>
-            <li><a href="#"><i class="fab fa-behance"></i></a></li>
-        </ul>
-    </div>
-    <div class="tags d-flex flex-wrap my-4">
-        <h5 class="me-3">Chủ đề:</h5>
-        {% for tag in item_article.tag.all%}
-            <a href = "{% url 'tag_detail' slug=tag.slug %}" class="badge bg-primary text-decoration-none me-2 mb-2">{{tag.name}}</a>
-        {% endfor %}
-        <!-- Thêm các tag khác tại đây -->
-    </div>
-    <div class="blog-author">
-        <div class="media align-items-center">
-            {% if author %}
-                <img src="{{author.image.url}}" alt="">
-                <div class="media-body">
-                    <a href="{% url 'author' slug=author.slug id=author.id %}">  
-                        <h4>{{ author.name }}</h4>
-                    </a>
-                    <p>{{ author.email }}</p> 
+    <div class="card position-relative">
+        <div class="card-header">
+            <div class="w-100 justify-content-between d-flex flex-wrap align-items-center gap-1">
+                <div class="d-flex flex-wrap flex-md-nowrap align-items-center gap-1">
+                    <button class="btn btn-danger" disabled="">
+                        Bulk Delete (0)
+                    </button>
+                                        <!--[if BLOCK]><![endif]-->                        <button wire:click="filterByStatus('all')" class="btn position-relative btn-primary">
+                            All
+                            <span class="badge bg-primary text-primary-fg badge-notification badge-pill">
+                                29
+                            </span>
+                        </button>
+                                            <button wire:click="filterByStatus('published')" class="btn position-relative btn-">
+                            Published
+                            <span class="badge bg-success text-success-fg badge-notification badge-pill">
+                                14
+                            </span>
+                        </button>
+                                            <button wire:click="filterByStatus('pending')" class="btn position-relative btn-">
+                            Pending
+                            <span class="badge bg-warning text-warning-fg badge-notification badge-pill">
+                                10
+                            </span>
+                        </button>
+                                            <button wire:click="filterByStatus('draft')" class="btn position-relative btn-">
+                            Draft
+                            <span class="badge bg-secondary text-secondary-fg badge-notification badge-pill">
+                                5
+                            </span>
+                        </button>
+                    <!--[if ENDBLOCK]><![endif]-->
                 </div>
-            {% else %}
-                <p>Thông tin tác giả không có sẵn.</p>
-            {% endif %}
+                <div class="d-flex align-items-center gap-1">
+
+                    <input type="search" class="form-control input-sm" placeholder="Search..." style="min-width: 120px">
+                </div>
+            </div>
+        </div>
+        <div class="card-table">
+            <div class="table-responsive">
+                <table class="table table-vcenter table-striped">
+                    <thead>
+                        <tr>
+                            <th class="w-1">
+                                <input class="form-check-input" type="checkbox" wire:model.live="selectAll">
+                            </th>
+                            <th>id</th>
+                            <th>name</th>
+                            <th>created at</th>
+                            <th>status</th>
+                            <th>actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!--[if BLOCK]><![endif]-->                            <tr wire:key="38" class="">
+                                <td>
+                                    <input class="form-check-input" type="checkbox" value="38" wire:model.live="selectedItems">
+                                </td>
+                                <td>38</td>
+                                <td>ahihi</td>
+                                <td>2024-10-10 14:34:39</td>
+                                <td>
+                                    <span class="badge bg-success text-success-fg">Published</span>
+                                </td>
+                                <td class="d-flex gap-1">
+                                    <a href="/admin-ne/sliders/edit/38" wire:navigate="" class="btn btn-sm btn-icon btn-primary">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-edit">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                            <path d="M7 7h-1a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-1"></path>
+                                            <path d="M20.385 6.585a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3l8.385 -8.415z"></path>
+                                            <path d="M16 5l3 3"></path>
+                                        </svg>
+                                    </a>
+                                    <a href="#" class="btn btn-sm btn-icon btn-danger" wire:click.prevent="showModalConfirmDelete(38)">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-trash">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                            <path d="M4 7l16 0"></path>
+                                            <path d="M10 11l0 6"></path>
+                                            <path d="M14 11l0 6"></path>
+                                            <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12"></path>
+                                            <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3"></path>
+                                        </svg>
+                                    </a>
+                                </td>
+                            </tr>
+                                                    <tr wire:key="22" class="">
+                                <td>
+                                    <input class="form-check-input" type="checkbox" value="22" wire:model.live="selectedItems">
+                                </td>
+                                <td>22</td>
+                                <td>Prof. Albertha Hirthe haha</td>
+                                <td>2024-10-03 12:30:18</td>
+                                <td>
+                                    <span class="badge bg-success text-success-fg">Published</span>
+                                </td>
+                                <td class="d-flex gap-1">
+                                    <a href="/admin-ne/sliders/edit/22" wire:navigate="" class="btn btn-sm btn-icon btn-primary">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-edit">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                            <path d="M7 7h-1a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-1"></path>
+                                            <path d="M20.385 6.585a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3l8.385 -8.415z"></path>
+                                            <path d="M16 5l3 3"></path>
+                                        </svg>
+                                    </a>
+                                    <a href="#" class="btn btn-sm btn-icon btn-danger" wire:click.prevent="showModalConfirmDelete(22)">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-trash">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                            <path d="M4 7l16 0"></path>
+                                            <path d="M10 11l0 6"></path>
+                                            <path d="M14 11l0 6"></path>
+                                            <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12"></path>
+                                            <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3"></path>
+                                        </svg>
+                                    </a>
+                                </td>
+                            </tr>
+                                                    <tr wire:key="23" class="">
+                                <td>
+                                    <input class="form-check-input" type="checkbox" value="23" wire:model.live="selectedItems">
+                                </td>
+                                <td>23</td>
+                                <td>Grayson Marks test thứ edit tên</td>
+                                <td>2024-10-03 12:30:18</td>
+                                <td>
+                                    <span class="badge bg-warning text-warning-fg">Pending</span>
+                                </td>
+                                <td class="d-flex gap-1">
+                                    <a href="/admin-ne/sliders/edit/23" wire:navigate="" class="btn btn-sm btn-icon btn-primary">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-edit">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                            <path d="M7 7h-1a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-1"></path>
+                                            <path d="M20.385 6.585a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3l8.385 -8.415z"></path>
+                                            <path d="M16 5l3 3"></path>
+                                        </svg>
+                                    </a>
+                                    <a href="#" class="btn btn-sm btn-icon btn-danger" wire:click.prevent="showModalConfirmDelete(23)">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-trash">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                            <path d="M4 7l16 0"></path>
+                                            <path d="M10 11l0 6"></path>
+                                            <path d="M14 11l0 6"></path>
+                                            <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12"></path>
+                                            <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3"></path>
+                                        </svg>
+                                    </a>
+                                </td>
+                            </tr>
+                                                    <tr wire:key="24" class="">
+                                <td>
+                                    <input class="form-check-input" type="checkbox" value="24" wire:model.live="selectedItems">
+                                </td>
+                                <td>24</td>
+                                <td>Sebastian Kling PhD</td>
+                                <td>2024-10-03 12:30:18</td>
+                                <td>
+                                    <span class="badge bg-success text-success-fg">Published</span>
+                                </td>
+                                <td class="d-flex gap-1">
+                                    <a href="/admin-ne/sliders/edit/24" wire:navigate="" class="btn btn-sm btn-icon btn-primary">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-edit">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                            <path d="M7 7h-1a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-1"></path>
+                                            <path d="M20.385 6.585a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3l8.385 -8.415z"></path>
+                                            <path d="M16 5l3 3"></path>
+                                        </svg>
+                                    </a>
+                                    <a href="#" class="btn btn-sm btn-icon btn-danger" wire:click.prevent="showModalConfirmDelete(24)">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-trash">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                            <path d="M4 7l16 0"></path>
+                                            <path d="M10 11l0 6"></path>
+                                            <path d="M14 11l0 6"></path>
+                                            <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12"></path>
+                                            <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3"></path>
+                                        </svg>
+                                    </a>
+                                </td>
+                            </tr>
+                                                    <tr wire:key="25" class="">
+                                <td>
+                                    <input class="form-check-input" type="checkbox" value="25" wire:model.live="selectedItems">
+                                </td>
+                                <td>25</td>
+                                <td>Royal Predovic IV</td>
+                                <td>2024-10-03 12:30:18</td>
+                                <td>
+                                    <span class="badge bg-success text-success-fg">Published</span>
+                                </td>
+                                <td class="d-flex gap-1">
+                                    <a href="/admin-ne/sliders/edit/25" wire:navigate="" class="btn btn-sm btn-icon btn-primary">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-edit">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                            <path d="M7 7h-1a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-1"></path>
+                                            <path d="M20.385 6.585a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3l8.385 -8.415z"></path>
+                                            <path d="M16 5l3 3"></path>
+                                        </svg>
+                                    </a>
+                                    <a href="#" class="btn btn-sm btn-icon btn-danger" wire:click.prevent="showModalConfirmDelete(25)">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-trash">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                            <path d="M4 7l16 0"></path>
+                                            <path d="M10 11l0 6"></path>
+                                            <path d="M14 11l0 6"></path>
+                                            <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12"></path>
+                                            <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3"></path>
+                                        </svg>
+                                    </a>
+                                </td>
+                            </tr>
+                                                    <tr wire:key="26" class="">
+                                <td>
+                                    <input class="form-check-input" type="checkbox" value="26" wire:model.live="selectedItems">
+                                </td>
+                                <td>26</td>
+                                <td>Kennedi Frami</td>
+                                <td>2024-10-03 12:30:18</td>
+                                <td>
+                                    <span class="badge bg-success text-success-fg">Published</span>
+                                </td>
+                                <td class="d-flex gap-1">
+                                    <a href="/admin-ne/sliders/edit/26" wire:navigate="" class="btn btn-sm btn-icon btn-primary">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-edit">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                            <path d="M7 7h-1a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-1"></path>
+                                            <path d="M20.385 6.585a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3l8.385 -8.415z"></path>
+                                            <path d="M16 5l3 3"></path>
+                                        </svg>
+                                    </a>
+                                    <a href="#" class="btn btn-sm btn-icon btn-danger" wire:click.prevent="showModalConfirmDelete(26)">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-trash">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                            <path d="M4 7l16 0"></path>
+                                            <path d="M10 11l0 6"></path>
+                                            <path d="M14 11l0 6"></path>
+                                            <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12"></path>
+                                            <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3"></path>
+                                        </svg>
+                                    </a>
+                                </td>
+                            </tr>
+                                                    <tr wire:key="27" class="">
+                                <td>
+                                    <input class="form-check-input" type="checkbox" value="27" wire:model.live="selectedItems">
+                                </td>
+                                <td>27</td>
+                                <td>Alivia Keebler</td>
+                                <td>2024-10-03 12:30:18</td>
+                                <td>
+                                    <span class="badge bg-warning text-warning-fg">Pending</span>
+                                </td>
+                                <td class="d-flex gap-1">
+                                    <a href="/admin-ne/sliders/edit/27" wire:navigate="" class="btn btn-sm btn-icon btn-primary">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-edit">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                            <path d="M7 7h-1a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-1"></path>
+                                            <path d="M20.385 6.585a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3l8.385 -8.415z"></path>
+                                            <path d="M16 5l3 3"></path>
+                                        </svg>
+                                    </a>
+                                    <a href="#" class="btn btn-sm btn-icon btn-danger" wire:click.prevent="showModalConfirmDelete(27)">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-trash">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                            <path d="M4 7l16 0"></path>
+                                            <path d="M10 11l0 6"></path>
+                                            <path d="M14 11l0 6"></path>
+                                            <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12"></path>
+                                            <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3"></path>
+                                        </svg>
+                                    </a>
+                                </td>
+                            </tr>
+                                                    <tr wire:key="28" class="">
+                                <td>
+                                    <input class="form-check-input" type="checkbox" value="28" wire:model.live="selectedItems">
+                                </td>
+                                <td>28</td>
+                                <td>Korey Rutherford</td>
+                                <td>2024-10-03 12:30:18</td>
+                                <td>
+                                    <span class="badge bg-secondary text-secondary-fg">Draft</span>
+                                </td>
+                                <td class="d-flex gap-1">
+                                    <a href="/admin-ne/sliders/edit/28" wire:navigate="" class="btn btn-sm btn-icon btn-primary">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-edit">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                            <path d="M7 7h-1a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-1"></path>
+                                            <path d="M20.385 6.585a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3l8.385 -8.415z"></path>
+                                            <path d="M16 5l3 3"></path>
+                                        </svg>
+                                    </a>
+                                    <a href="#" class="btn btn-sm btn-icon btn-danger" wire:click.prevent="showModalConfirmDelete(28)">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-trash">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                            <path d="M4 7l16 0"></path>
+                                            <path d="M10 11l0 6"></path>
+                                            <path d="M14 11l0 6"></path>
+                                            <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12"></path>
+                                            <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3"></path>
+                                        </svg>
+                                    </a>
+                                </td>
+                            </tr>
+                                                    <tr wire:key="29" class="">
+                                <td>
+                                    <input class="form-check-input" type="checkbox" value="29" wire:model.live="selectedItems">
+                                </td>
+                                <td>29</td>
+                                <td>Dr. Isaiah Schiller I</td>
+                                <td>2024-10-03 12:30:18</td>
+                                <td>
+                                    <span class="badge bg-success text-success-fg">Published</span>
+                                </td>
+                                <td class="d-flex gap-1">
+                                    <a href="/admin-ne/sliders/edit/29" wire:navigate="" class="btn btn-sm btn-icon btn-primary">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-edit">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                            <path d="M7 7h-1a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-1"></path>
+                                            <path d="M20.385 6.585a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3l8.385 -8.415z"></path>
+                                            <path d="M16 5l3 3"></path>
+                                        </svg>
+                                    </a>
+                                    <a href="#" class="btn btn-sm btn-icon btn-danger" wire:click.prevent="showModalConfirmDelete(29)">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-trash">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                            <path d="M4 7l16 0"></path>
+                                            <path d="M10 11l0 6"></path>
+                                            <path d="M14 11l0 6"></path>
+                                            <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12"></path>
+                                            <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3"></path>
+                                        </svg>
+                                    </a>
+                                </td>
+                            </tr>
+                                                    <tr wire:key="30" class="">
+                                <td>
+                                    <input class="form-check-input" type="checkbox" value="30" wire:model.live="selectedItems">
+                                </td>
+                                <td>30</td>
+                                <td>Clovis Connelly</td>
+                                <td>2024-10-03 12:30:18</td>
+                                <td>
+                                    <span class="badge bg-success text-success-fg">Published</span>
+                                </td>
+                                <td class="d-flex gap-1">
+                                    <a href="/admin-ne/sliders/edit/30" wire:navigate="" class="btn btn-sm btn-icon btn-primary">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-edit">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                            <path d="M7 7h-1a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-1"></path>
+                                            <path d="M20.385 6.585a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3l8.385 -8.415z"></path>
+                                            <path d="M16 5l3 3"></path>
+                                        </svg>
+                                    </a>
+                                    <a href="#" class="btn btn-sm btn-icon btn-danger" wire:click.prevent="showModalConfirmDelete(30)">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-trash">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                            <path d="M4 7l16 0"></path>
+                                            <path d="M10 11l0 6"></path>
+                                            <path d="M14 11l0 6"></path>
+                                            <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12"></path>
+                                            <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3"></path>
+                                        </svg>
+                                    </a>
+                                </td>
+                            </tr>
+                        <!--[if ENDBLOCK]><![endif]-->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="card-footer">
+            <div>
+    <!--[if BLOCK]><![endif]-->        <nav class="d-flex justify-items-center justify-content-between">
+            <div class="d-flex justify-content-between flex-fill d-sm-none">
+                <ul class="pagination">
+                    
+                    <!--[if BLOCK]><![endif]-->                        <li class="page-item disabled" aria-disabled="true">
+                            <span class="page-link">« Previous</span>
+                        </li>
+                    <!--[if ENDBLOCK]><![endif]-->
+
+                    
+                    <!--[if BLOCK]><![endif]-->                        <li class="page-item">
+                            <button type="button" dusk="nextPage" class="page-link" wire:click="nextPage('page')" x-on:click="   ($el.closest('body') || document.querySelector('body')).scrollIntoView()" wire:loading.attr="disabled">Next »</button>
+                        </li>
+                    <!--[if ENDBLOCK]><![endif]-->
+                </ul>
+            </div>
+
+            <div class="d-none flex-sm-fill d-sm-flex align-items-sm-center justify-content-sm-between">
+                <div>
+                    <p class="small text-muted">
+                        Showing
+                        <span class="fw-semibold">1</span>
+                        to
+                        <span class="fw-semibold">10</span>
+                        of
+                        <span class="fw-semibold">29</span>
+                        results
+                    </p>
+                </div>
+
+                <div>
+                    <ul class="pagination">
+                        
+                        <!--[if BLOCK]><![endif]-->                            <li class="page-item disabled" aria-disabled="true" aria-label="« Previous">
+                                <span class="page-link" aria-hidden="true">‹</span>
+                            </li>
+                        <!--[if ENDBLOCK]><![endif]-->
+
+                        
+                        <!--[if BLOCK]><![endif]-->                            
+                            <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->
+
+                            
+                            <!--[if BLOCK]><![endif]-->                                <!--[if BLOCK]><![endif]-->                                    <!--[if BLOCK]><![endif]-->                                        <li class="page-item active" wire:key="paginator-page-page-1" aria-current="page"><span class="page-link">1</span></li>
+                                    <!--[if ENDBLOCK]><![endif]-->
+                                                                    <!--[if BLOCK]><![endif]-->                                        <li class="page-item" wire:key="paginator-page-page-2"><button type="button" class="page-link" wire:click="gotoPage(2, 'page')" x-on:click="   ($el.closest('body') || document.querySelector('body')).scrollIntoView()">2</button></li>
+                                    <!--[if ENDBLOCK]><![endif]-->
+                                                                    <!--[if BLOCK]><![endif]-->                                        <li class="page-item" wire:key="paginator-page-page-3"><button type="button" class="page-link" wire:click="gotoPage(3, 'page')" x-on:click="   ($el.closest('body') || document.querySelector('body')).scrollIntoView()">3</button></li>
+                                    <!--[if ENDBLOCK]><![endif]-->
+                                <!--[if ENDBLOCK]><![endif]-->
+                            <!--[if ENDBLOCK]><![endif]-->
+                        <!--[if ENDBLOCK]><![endif]-->
+
+                        
+                        <!--[if BLOCK]><![endif]-->                            <li class="page-item">
+                                <button type="button" dusk="nextPage" class="page-link" wire:click="nextPage('page')" x-on:click="   ($el.closest('body') || document.querySelector('body')).scrollIntoView()" wire:loading.attr="disabled" aria-label="Next »">›</button>
+                            </li>
+                        <!--[if ENDBLOCK]><![endif]-->
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    <!--[if ENDBLOCK]><![endif]-->
+</div>
+        </div>
+        <div wire:loading="" class="position-absolute top-0 start-0 bottom-0 end-0 z-1" style="background-color: rgb(255 255 255 / 50%)">
+            <div class="w-100 h-100 d-flex justify-content-center align-items-center">
+                <div class="spinner-border spinner-border-lg text-primary" role="status"></div>
+            </div>
         </div>
     </div>
-    
-    <div class="related-posts">
-        <h3 class="related-posts-title">Bài Viết Liên Quan</h3>
-        <div class="d-flex flex-wrap">
-            {% for item in items_article_related %}
-                <div class="post-item col-6">
-                    <img src="{{item.image.url}}"
-                        alt="post" style="width: 30%;">
-                    <div class="post-body">
-                        <a href="{{item.get_absolute_url}}">
-                            <h4>{{item.name}}</h4>
-                        </a>
-                        <p></p>
+
+    <div class="modal modal-blur fade modal-confirm-delete" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div class="modal-status bg-danger"></div>
+            <div class="modal-body text-center py-4">
+                <!-- Download SVG icon from http://tabler-icons.io/i/alert-triangle -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon mb-2 text-danger icon-lg">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M12 9v4"></path>
+                    <path d="M10.363 3.591l-8.106 13.534a1.914 1.914 0 0 0 1.636 2.871h16.214a1.914 1.914 0 0 0 1.636 -2.87l-8.106 -13.536a1.914 1.914 0 0 0 -3.274 0z"></path>
+                    <path d="M12 16h.01"></path>
+                </svg>
+                <h3>Confirm delete</h3>
+                <div class="text-secondary">Do you really want to delete this record?</div>
+            </div>
+            <div class="modal-footer">
+                <div class="w-100">
+                    <div class="row">
+                        <div class="col">
+                            <button class="btn btn-danger w-100" wire:click="deleteRecord">Delete</button>
+                        </div>
+                        <div class="col">
+                            <button class="btn w-100" data-bs-dismiss="modal">Cancel</button>
+                        </div>
                     </div>
                 </div>
-            {% endfor %}
+            </div>
         </div>
     </div>
-
 </div>
-
-
-
-
+</div>
+                </div>
+            </div>
 {% endblock%}
