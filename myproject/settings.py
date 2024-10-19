@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-9=%rdp907c0nt29hf44@s%6_r+$s55mf%si&ddg=vj4n#nte+*
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['news-yom3.onrender.com']
+ALLOWED_HOSTS = ['news-yom3.onrender.com', '127.0.0.1']
 
 
 # Application definition
@@ -90,20 +90,29 @@ WSGI_APPLICATION = 'myproject.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'django_quay',
+#         'USER': 'root',
+#         # 'PASSWORD': '',
+#         'HOST': 'localhost',
+#         'PORT': '3306',
+#     }
+# }
+
 DATABASES = {
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.sqlite3',
-    #     'NAME': BASE_DIR / 'db.sqlite3',
-    # }
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'django_quay',
-        'USER': 'root',
-        # 'PASSWORD': '',
-        'HOST': 'localhost',
+        'USER': 'u70qzby7irfx0d5m',
+        'PASSWORD': 'dTFB9eup9TSRwBHImqyD',   
+        'HOST': 'bfheqtkfizwwkcsocnzb-mysql.services.clever-cloud.com',
         'PORT': '3306',
     }
 }
+
+
 
 CACHES = {
     "default": {
