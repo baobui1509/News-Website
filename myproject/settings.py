@@ -104,7 +104,7 @@ WSGI_APPLICATION = 'myproject.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'django_quay',
+        'NAME': 'bfheqtkfizwwkcsocnzb',
         'USER': 'u70qzby7irfx0d5m',
         'PASSWORD': 'dTFB9eup9TSRwBHImqyD',   
         'HOST': 'bfheqtkfizwwkcsocnzb-mysql.services.clever-cloud.com',
