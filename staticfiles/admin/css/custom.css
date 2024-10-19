@@ -1,0 +1,12 @@
+#id_special, #id_is_homepage{
+    display: flex;
+}
+
+/* .vCheckboxLabel{
+    display: flex;
+} */
+
+.advance-options .tagify__tag {
+    --tag-hover: var(--tag-bg);
+}
+
